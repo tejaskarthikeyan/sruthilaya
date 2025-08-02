@@ -10,10 +10,12 @@ const Hero = () => {
       }}></div>
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        {/* Logo placeholder - will be replaced with actual Sruthilaya logo */}
         <div className="mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-gold to-gold-dark rounded-full mb-6">
-            <Music className="w-8 h-8 text-black-deep" />
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-gold to-gold-dark rounded-full mb-6">
+            <span className="text-2xl font-bold text-black-deep">S</span>
           </div>
+          <p className="text-xs text-muted-foreground italic">Sruthilaya Logo Placeholder</p>
         </div>
         
         <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">

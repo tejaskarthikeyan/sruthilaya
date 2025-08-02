@@ -7,16 +7,16 @@ const Gallery = () => {
   
   const categories = ["All", "BEATS", "College Fests", "Corporate", "Open Mics", "Studios"];
   
-  // Using placeholder images for demonstration
+  // Using placeholder images for demonstration with different backgrounds for each slide
   const galleryItems = [
-    { id: 1, category: "BEATS", title: "BEATS 2023 Main Stage", image: "photo-1605810230434-7631ac76ec81" },
-    { id: 2, category: "College Fests", title: "Techofes Performance", image: "photo-1593110577707-3024f401075e" },
-    { id: 3, category: "Corporate", title: "Corporate Event", image: "photo-1519389950473-47ba0277781c" },
-    { id: 4, category: "Open Mics", title: "Open Mic Night", image: "photo-1581090464777-f3220bbe1b8b" },
-    { id: 5, category: "BEATS", title: "BEATS Crowd Energy", image: "photo-1500673922987-e212871fec22" },
-    { id: 6, category: "Studios", title: "Recording Session", image: "photo-1473177104440-ffee2f376098" },
-    { id: 7, category: "College Fests", title: "MIT Vibez", image: "photo-1605810230434-7631ac76ec81" },
-    { id: 8, category: "Corporate", title: "Marina Mall Show", image: "photo-1593110577707-3024f401075e" },
+    { id: 1, category: "BEATS", title: "BEATS 2023 Main Stage", image: "photo-1605810230434-7631ac76ec81", background: "photo-1540039155733-5bb30b53aa14" },
+    { id: 2, category: "College Fests", title: "Techofes Performance", image: "photo-1593110577707-3024f401075e", background: "photo-1470225620780-dba8ba36b745" },
+    { id: 3, category: "Corporate", title: "Corporate Event", image: "photo-1519389950473-47ba0277781c", background: "photo-1501281668745-f7f57925c3b4" },
+    { id: 4, category: "Open Mics", title: "Open Mic Night", image: "photo-1581090464777-f3220bbe1b8b", background: "photo-1493225457124-a3eb161ffa5f" },
+    { id: 5, category: "BEATS", title: "BEATS Crowd Energy", image: "photo-1500673922987-e212871fec22", background: "photo-1516450360452-9312f5e86fc7" },
+    { id: 6, category: "Studios", title: "Recording Session", image: "photo-1473177104440-ffee2f376098", background: "photo-1598488035139-bdbb2231ce04" },
+    { id: 7, category: "College Fests", title: "MIT Vibez", image: "photo-1605810230434-7631ac76ec81", background: "photo-1571019613454-1cb2f99b2d8b" },
+    { id: 8, category: "Corporate", title: "Marina Mall Show", image: "photo-1593110577707-3024f401075e", background: "photo-1445985543470-41fba5c3144a" },
   ];
 
   const filteredItems = activeCategory === "All" 
@@ -27,16 +27,9 @@ const Gallery = () => {
     <section id="gallery" className="py-20 bg-gradient-to-b from-black-muted to-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <p className="text-sm text-gold uppercase tracking-wider mb-4">GALLERY</p>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            My Visual Diary
+            Photo Gallery
           </h2>
-          <p className="text-lg text-muted-foreground mb-2">
-            See the world through my lens:
-          </p>
-          <p className="text-muted-foreground">
-            adventures in photos and videos
-          </p>
         </div>
 
         {/* Category Filter */}
@@ -70,11 +63,19 @@ const Gallery = () => {
                   index === 2 ? "md:col-span-2 lg:col-span-1" : ""
                 } ${index === 0 || index === 4 ? "lg:col-span-1" : ""}`}
               >
-                <div className="aspect-[4/3] bg-gradient-to-br from-card to-black-muted">
+                <div 
+                  className="aspect-[4/3] relative"
+                  style={{
+                    backgroundImage: `url(https://images.unsplash.com/${item.background}?w=800&h=600&fit=crop)`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }}
+                >
+                  <div className="absolute inset-0 bg-black/30"></div>
                   <img 
                     src={`https://images.unsplash.com/${item.image}?w=800&h=600&fit=crop`}
                     alt={item.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover relative z-10"
                   />
                 </div>
                 

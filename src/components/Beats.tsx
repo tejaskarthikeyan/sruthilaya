@@ -3,7 +3,16 @@ import { Calendar, Users, Music, Sparkles } from "lucide-react";
 
 const Beats = () => {
   return (
-    <section id="beats" className="py-20 bg-gradient-to-b from-black-card to-black-muted">
+    <section 
+      id="beats" 
+      className="py-20 relative overflow-hidden"
+      style={{
+        background: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1920&h=1080&fit=crop')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
@@ -42,11 +51,16 @@ const Beats = () => {
           {/* Image & Stats */}
           <div className="relative">
             <div className="bg-gradient-to-br from-card to-black-deep rounded-2xl p-8 border border-border">
-              <div className="aspect-video bg-gradient-to-br from-gold/20 to-gold-dark/10 rounded-xl mb-6 flex items-center justify-center">
-                <div className="text-center">
-                  <Users className="w-16 h-16 text-gold mx-auto mb-4" />
-                  <p className="text-2xl font-bold text-foreground">1000+</p>
-                  <p className="text-muted-foreground">Annual Attendees</p>
+              <div className="aspect-video bg-gradient-to-br from-gold/20 to-gold-dark/10 rounded-xl mb-6 relative overflow-hidden">
+                {/* Placeholder for BEATS concert image */}
+                <img 
+                  src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&h=600&fit=crop"
+                  alt="BEATS Concert"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div className="absolute bottom-4 left-4">
+                  <p className="text-white font-semibold">BEATS Concert Experience</p>
                 </div>
               </div>
               

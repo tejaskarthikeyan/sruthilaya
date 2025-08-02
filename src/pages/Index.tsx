@@ -5,7 +5,7 @@ import Services from "@/components/Services";
 import Stages from "@/components/Stages";
 import Beats from "@/components/Beats";
 import Gallery from "@/components/Gallery";
-import Bookings from "@/components/Bookings";
+import BookingsNew from "@/components/BookingsNew";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -19,7 +19,7 @@ const Index = () => {
       <Stages />
       <Beats />
       <Gallery />
-      <Bookings />
+      <BookingsNew />
       <Contact />
       <Footer />
     </div>
