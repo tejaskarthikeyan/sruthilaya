@@ -52,6 +52,17 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Custom Sruthilaya colors
+				gold: {
+					DEFAULT: 'hsl(var(--gold))',
+					muted: 'hsl(var(--gold-muted))',
+					dark: 'hsl(var(--gold-dark))'
+				},
+				black: {
+					deep: 'hsl(var(--black-deep))',
+					card: 'hsl(var(--black-card))',
+					muted: 'hsl(var(--black-muted))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
