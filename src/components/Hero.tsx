@@ -1,24 +1,33 @@
 import { Button } from "@/components/ui/button";
 import { Music } from "lucide-react";
+import sruthilayaLogo from "@/assets/sruthilaya-logo.png";
 
 const Hero = () => {
+  const scrollToContact = () => {
+    const element = document.getElementById('bookings');
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-black-card to-black-muted relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-black-card to-black-muted relative overflow-hidden" style={{ backgroundImage: 'var(--bg-pattern)' }}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-50" style={{
         backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")"
       }}></div>
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        {/* Logo placeholder - will be replaced with actual Sruthilaya logo */}
+        {/* Sruthilaya Logo */}
         <div className="mb-8">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-gold to-gold-dark rounded-full mb-6">
-            <span className="text-2xl font-bold text-black-deep">S</span>
+          <div className="inline-flex items-center justify-center mb-6">
+            <img 
+              src={sruthilayaLogo} 
+              alt="Sruthilaya Logo" 
+              className="w-24 h-24 object-contain"
+            />
           </div>
-          <p className="text-xs text-muted-foreground italic">Sruthilaya Logo Placeholder</p>
         </div>
         
-        <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
+        <h1 className="text-5xl md:text-7xl font-bold font-oswald text-foreground mb-6 leading-tight tracking-wider">
           Sruthilaya
         </h1>
         
@@ -31,10 +40,10 @@ const Hero = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button variant="gold" size="lg" className="text-lg px-8 py-6">
+          <Button variant="gold" size="lg" className="text-lg px-8 py-6 font-inter font-semibold" onClick={scrollToContact}>
             Book Us Now
           </Button>
-          <Button variant="gold-outline" size="lg" className="text-lg px-8 py-6">
+          <Button variant="gold-outline" size="lg" className="text-lg px-8 py-6 font-inter font-semibold" onClick={scrollToContact}>
             Discover More
           </Button>
         </div>

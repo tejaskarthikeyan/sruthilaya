@@ -25,13 +25,13 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-b from-background to-black-card">
+    <section id="about" className="py-20 bg-gradient-to-b from-background to-black-card relative" style={{ backgroundImage: 'var(--bg-pattern)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold font-oswald text-foreground mb-6 tracking-wide">
             About Us
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-inter">
             Sruthilaya is a vibrant collective of singers and instrumentalists from Anna University. 
             From soulful melodies to power-packed covers, we perform across genres and languages, 
             creating unforgettable musical moments.
@@ -50,10 +50,10 @@ const About = () => {
                   <div className="w-16 h-16 bg-gradient-to-r from-gold to-gold-dark rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                     <IconComponent className="w-8 h-8 text-black-deep" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gold mb-4">
+                  <h3 className="text-xl font-semibold font-inter text-gold mb-4">
                     {feature.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed font-inter">
                     {feature.description}
                   </p>
                 </div>

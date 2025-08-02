@@ -29,13 +29,13 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-gradient-to-b from-black-card to-background">
+    <section id="services" className="py-20 bg-gradient-to-b from-black-card to-background relative" style={{ backgroundImage: 'var(--bg-pattern)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold font-oswald text-foreground mb-6 tracking-wide">
             What We Do
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto font-inter">
             Our versatile musical repertoire spans across various genres and languages, 
             offering something special for every occasion and audience.
           </p>
@@ -54,11 +54,11 @@ const Services = () => {
                     <div className="w-12 h-12 bg-gradient-to-r from-gold to-gold-dark rounded-lg flex items-center justify-center mr-4">
                       <IconComponent className="w-6 h-6 text-black-deep" />
                     </div>
-                    <h3 className="text-2xl font-bold text-gold">
+                    <h3 className="text-2xl font-bold font-inter text-gold">
                       {service.title}
                     </h3>
                   </div>
-                  <p className="text-foreground leading-relaxed text-lg">
+                  <p className="text-foreground leading-relaxed text-lg font-inter">
                     {service.description}
                   </p>
                 </div>

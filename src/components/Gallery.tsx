@@ -24,10 +24,10 @@ const Gallery = () => {
     : galleryItems.filter(item => item.category === activeCategory);
 
   return (
-    <section id="gallery" className="py-20 bg-gradient-to-b from-black-muted to-background">
+    <section id="gallery" className="py-20 bg-gradient-to-b from-black-muted to-background relative" style={{ backgroundImage: 'var(--bg-pattern)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold font-oswald text-foreground mb-6 tracking-wide">
             Photo Gallery
           </h2>
         </div>
@@ -39,7 +39,7 @@ const Gallery = () => {
               key={category}
               variant={activeCategory === category ? "default" : "outline"}
               onClick={() => setActiveCategory(category)}
-              className={`px-6 py-2 rounded-full transition-all duration-300 ${
+              className={`px-6 py-2 rounded-full transition-all duration-300 font-inter ${
                 activeCategory === category 
                   ? "bg-primary text-primary-foreground" 
                   : "hover:bg-gold/10 hover:border-gold"
@@ -82,8 +82,8 @@ const Gallery = () => {
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black-deep/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-white font-semibold text-lg mb-1">{item.title}</h3>
-                    <p className="text-gold text-sm">{item.category}</p>
+                    <h3 className="text-white font-semibold font-inter text-lg mb-1">{item.title}</h3>
+                    <p className="text-gold text-sm font-inter">{item.category}</p>
                   </div>
                 </div>
               </div>

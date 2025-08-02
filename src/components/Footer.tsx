@@ -18,7 +18,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-t from-black-deep to-background border-t border-border">
+    <footer className="bg-gradient-to-t from-black-deep to-background border-t border-border relative" style={{ backgroundImage: 'var(--bg-pattern)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
@@ -27,9 +27,9 @@ const Footer = () => {
               <div className="w-8 h-8 rounded-full bg-gradient-to-r from-gold to-gold-dark flex items-center justify-center">
                 <span className="text-black-deep font-bold text-sm">S</span>
               </div>
-              <span className="text-xl font-bold text-foreground">Sruthilaya</span>
+              <span className="text-xl font-bold font-oswald text-foreground tracking-wide">Sruthilaya</span>
             </div>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
+            <p className="text-muted-foreground mb-6 leading-relaxed font-inter">
               The Official Music Club of Anna University - bringing the energy of live performance 
               to audiences across Chennai and beyond.
             </p>
@@ -48,7 +48,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold text-gold mb-4">Quick Links</h3>
+            <h3 className="text-lg font-semibold font-inter text-gold mb-4">Quick Links</h3>
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
@@ -65,7 +65,7 @@ const Footer = () => {
 
           {/* More Info */}
           <div>
-            <h3 className="text-lg font-semibold text-gold mb-4">More Info</h3>
+            <h3 className="text-lg font-semibold font-inter text-gold mb-4">More Info</h3>
             <ul className="space-y-3">
               {moreInfo.map((link, index) => (
                 <li key={index}>
@@ -82,7 +82,7 @@ const Footer = () => {
 
           {/* Get in Touch */}
           <div>
-            <h3 className="text-lg font-semibold text-gold mb-4">Get in Touch</h3>
+            <h3 className="text-lg font-semibold font-inter text-gold mb-4">Get in Touch</h3>
             <div className="space-y-4">
               <div className="flex items-start">
                 <Mail className="w-5 h-5 text-gold mr-3 mt-1 flex-shrink-0" />

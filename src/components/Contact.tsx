@@ -33,16 +33,16 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-black-card to-background">
+    <section id="contact" className="py-20 bg-gradient-to-b from-black-card to-background relative" style={{ backgroundImage: 'var(--bg-pattern)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="w-16 h-16 bg-gradient-to-r from-gold to-gold-dark rounded-full flex items-center justify-center mx-auto mb-6">
             <span className="text-2xl text-black-deep">📞</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold font-oswald text-foreground mb-6 tracking-wide">
             Contact Us
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto font-inter">
             Interested in booking us or learning more about Sruthilaya? Our team is ready to 
             answer your questions.
           </p>
@@ -51,7 +51,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div>
-            <h3 className="text-2xl font-bold text-gold mb-8">
+            <h3 className="text-2xl font-bold font-oswald text-gold mb-8 tracking-wide">
               Reach Out to Us
             </h3>
             
@@ -93,7 +93,7 @@ const Contact = () => {
 
           {/* Team Members */}
           <div>
-            <h3 className="text-2xl font-bold text-gold mb-8">
+            <h3 className="text-2xl font-bold font-oswald text-gold mb-8 tracking-wide">
               Our Team
             </h3>
             
