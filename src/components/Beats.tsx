@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, Users, Music, Sparkles } from "lucide-react";
-import beatsCrowd from "@/assets/beats-crowd.png";
 
 const Beats = () => {
   const scrollToContact = () => {
@@ -57,16 +56,10 @@ const Beats = () => {
           {/* Image & Stats */}
           <div className="relative">
             <div className="bg-gradient-to-br from-card to-black-deep rounded-2xl p-8 border border-border">
-              <div className="aspect-video bg-gradient-to-br from-gold/20 to-gold-dark/10 rounded-xl mb-6 relative overflow-hidden">
-                {/* BEATS concert crowd image */}
-                <img 
-                  src={beatsCrowd}
-                  alt="BEATS Concert Crowd"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                <div className="absolute bottom-4 left-4">
-                  <p className="text-white font-semibold font-inter">BEATS Concert Experience</p>
+              <div className="aspect-video bg-gradient-to-br from-gold/20 to-gold-dark/10 rounded-xl mb-6 relative overflow-hidden flex items-center justify-center">
+                <div className="text-center">
+                  <Music className="w-16 h-16 text-gold mx-auto mb-4" />
+                  <p className="text-foreground font-semibold font-inter">BEATS Concert Experience</p>
                 </div>
               </div>
               
