@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Music } from "lucide-react";
-import sruthilayaLogo from "@/assets/sruthilaya-logo.png";
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -16,16 +15,6 @@ const Hero = () => {
       }}></div>
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        {/* Sruthilaya Logo */}
-        <div className="mb-8">
-          <div className="inline-flex items-center justify-center mb-6">
-            <img 
-              src={sruthilayaLogo} 
-              alt="Sruthilaya Logo" 
-              className="w-24 h-24 object-contain"
-            />
-          </div>
-        </div>
         
         <h1 className="text-5xl md:text-7xl font-bold font-oswald text-foreground mb-6 leading-tight tracking-wider">
           Sruthilaya
