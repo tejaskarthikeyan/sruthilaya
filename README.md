@@ -21,11 +21,11 @@ To run the project locally, follow these steps:
 
 1. Clone the repository :
 
-- git clone <YOUR_GIT_URL>
+- git clone https://github.com/tejaskarthikeyan/sruthilaya-club-website
 
 2. Navigate to the project directory :
 
-- cd <YOUR_PROJECT_NAME>
+- cd sruthilaya-club-website
 
 3. Install dependencies :
 
