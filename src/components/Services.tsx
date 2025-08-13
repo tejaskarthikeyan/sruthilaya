@@ -6,25 +6,25 @@ const Services = () => {
       icon: Film,
       title: "Cinematic Covers",
       description: "Captivating covers of Tamil, Hindi, and English film songs that resonate with audiences.",
-      image: "bg-gradient-to-br from-red-900/20 to-red-600/10"
+      image: "bg-gradient-to-br from-red-900/200 to-red-600/100"
     },
     {
       icon: Globe,
       title: "Western Styles",
       description: "From energetic pop tracks to soulful R&B and powerful rock performances.",
-      image: "bg-gradient-to-br from-blue-900/20 to-blue-600/10"
+      image: "bg-gradient-to-br from-blue-900/200 to-blue-600/100"
     },
     {
       icon: Music4,
       title: "Original Compositions",
       description: "Maaja Feels, Adiye Maayavi and more original compositions coming up!",
-      image: "bg-gradient-to-br from-purple-900/20 to-purple-600/10"
+      image: "bg-gradient-to-br from-purple-900/200 to-purple-600/100"
     },
     {
       icon: Users,
       title: "Cultural Sets",
       description: "Traditional performances perfectly crafted for cultural events and celebrations.",
-      image: "bg-gradient-to-br from-green-900/20 to-green-600/10"
+      image: "bg-gradient-to-br from-green-1000/20 to-green-700/10"
     }
   ];
 

@@ -20,11 +20,9 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-r from-gold to-gold-dark flex items-center justify-center">
-              <span className="text-black-deep font-bold text-sm">S</span>
-            </div>
-            <span className="text-xl font-bold text-foreground">Sruthilaya</span>
+          <div className="flex items-center space-x-0">
+              <img src="/logo.png" alt="Sruthilaya Logo" className="h-11 w-auto mr-[-20px]" />
+              <img src="/sruthilaya-text.png" alt="Sruthilaya Text" className="h-10 w-auto" />
           </div>
 
           {/* Desktop Menu */}
@@ -39,8 +37,9 @@ const Navbar = () => {
               </a>
             ))}
             <Button variant="gold-outline" size="sm" className="ml-4">
-              <Instagram className="w-4 h-4 mr-1" />
+              <a href="https://www.instagram.com/sruthilaya_au/?hl=en">
               Follow Us
+              </a>
             </Button>
           </div>
 

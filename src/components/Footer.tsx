@@ -19,19 +19,19 @@ const Footer = () => {
 
   return (
     <footer className="bg-gradient-to-t from-black-deep to-background border-t border-border relative" style={{ backgroundImage: 'var(--bg-pattern)' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Brand */}
+     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-r from-gold to-gold-dark flex items-center justify-center">
-                <span className="text-black-deep font-bold text-sm">S</span>
-              </div>
-              <span className="text-xl font-bold font-oswald text-foreground tracking-wide">Sruthilaya</span>
+           <div className="flex items-center space-x-2 mb-4">
+            <div className="w-8 h-8 rounded-full flex items-center justify-center">
+             <img src="/logo.png" alt="Sruthilaya Logo" className="w-full h-full object-cover rounded-full" />
+            </div>
+            <span className="text-xl font-bold font-oswald text-foreground tracking-wide">Sruthilaya</span>
             </div>
             <p className="text-muted-foreground mb-6 leading-relaxed font-inter">
-              The Official Music Club of Anna University - bringing the energy of live performance 
-              to audiences across Chennai and beyond.
+             The Official Music Club of Anna University - bringing the energy of live performance 
+             to audiences across Chennai and beyond.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="w-10 h-10 bg-gold/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-black-deep transition-colors">

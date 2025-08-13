@@ -1,21 +1,21 @@
 import { Button } from "@/components/ui/button";
-import { Calendar, Users, Music, Sparkles } from "lucide-react";
+import { Calendar, Music, Sparkles } from "lucide-react";
 
 const Beats = () => {
   const scrollToContact = () => {
-    const element = document.getElementById('bookings');
-    element?.scrollIntoView({ behavior: 'smooth' });
+    const element = document.getElementById("bookings");
+    element?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section 
-      id="beats" 
+    <section
+      id="beats"
       className="py-20 relative overflow-hidden"
       style={{
-        background: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1920&h=1080&fit=crop'), var(--bg-pattern)`,
-        backgroundSize: 'cover, cover, 60px 60px',
-        backgroundPosition: 'center, center, center',
-        backgroundAttachment: 'fixed, fixed, local'
+        background: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('/beats-back.jpg'), var(--bg-pattern)`,
+        backgroundSize: "cover, cover, 60px 60px",
+        backgroundPosition: "center, center, center",
+        backgroundAttachment: "fixed, fixed, local",
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,9 +26,10 @@ const Beats = () => {
               BEATS Concert
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Our flagship 2-hour concert that brings together the very best of Sruthilaya's musical talent.
+              Our flagship 2-hour concert that brings together the very best of
+              Sruthilaya's musical talent.
             </p>
-            
+
             <div className="inline-flex items-center bg-gradient-to-r from-gold to-gold-dark text-black-deep px-6 py-3 rounded-full font-semibold mb-8">
               <Sparkles className="w-5 h-5 mr-2" />
               100% Live – 100% Energy
@@ -39,7 +40,7 @@ const Beats = () => {
                 "Original compositions that showcase our creative talents",
                 "Carefully crafted mashups blending popular songs",
                 "Tamil/Hindi/English cinema song renditions",
-                "Special fusion sets that blend different musical traditions"
+                "Special fusion sets that blend different musical traditions",
               ].map((item, index) => (
                 <div key={index} className="flex items-start">
                   <Music className="w-5 h-5 text-gold mr-3 mt-1 flex-shrink-0" />
@@ -48,28 +49,37 @@ const Beats = () => {
               ))}
             </div>
 
-            <Button variant="gold" size="lg" className="text-lg px-8 py-6 font-inter font-semibold" onClick={scrollToContact}>
+            <Button
+              variant="gold"
+              size="lg"
+              className="text-lg px-8 py-6 font-inter font-semibold"
+              onClick={scrollToContact}
+            >
               Learn More About BEATS
             </Button>
           </div>
 
-          {/* Image & Stats */}
+          {/* YouTube Video Embed */}
           <div className="relative">
             <div className="bg-gradient-to-br from-card to-black-deep rounded-2xl p-8 border border-border">
-              <div className="aspect-video bg-gradient-to-br from-gold/20 to-gold-dark/10 rounded-xl mb-6 relative overflow-hidden flex items-center justify-center">
-                <div className="text-center">
-                  <Music className="w-16 h-16 text-gold mx-auto mb-4" />
-                  <p className="text-foreground font-semibold font-inter">BEATS Concert Experience</p>
-                </div>
+              <div className="aspect-video rounded-xl mb-6 overflow-hidden">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/_YefACuLKSk?rel=0"
+                  title="Sruthilaya BEATS Concert"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
               </div>
-              
+
               <div className="bg-gradient-to-r from-gold to-gold-dark p-6 rounded-xl">
                 <h3 className="text-xl font-bold text-black-deep mb-2">
                   The BEATS Experience
                 </h3>
                 <p className="text-black-deep/80">
-                  A full production concert featuring our complete ensemble that will take 
-                  your audience on an unforgettable musical journey.
+                  A full production concert featuring our complete ensemble that
+                  will take your audience on an unforgettable musical journey.
                 </p>
               </div>
             </div>
@@ -78,7 +88,9 @@ const Beats = () => {
             <div className="absolute -top-4 -right-4 bg-gradient-to-r from-gold to-gold-dark p-4 rounded-xl">
               <div className="flex items-center">
                 <Calendar className="w-5 h-5 text-black-deep mr-2" />
-                <span className="text-black-deep font-semibold">Annual Event</span>
+                <span className="text-black-deep font-semibold">
+                  Annual Event
+                </span>
               </div>
             </div>
           </div>
