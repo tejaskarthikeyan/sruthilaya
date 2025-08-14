@@ -36,7 +36,7 @@ const Gallery: React.FC = () => {
     background: `/college-fests/${i + 1}.jpg`,
   }));
 
-  const corporateImages: GalleryItem[] = Array.from({ length: 7 }, (_, i) => ({
+  const corporateImages: GalleryItem[] = Array.from({ length: 13 }, (_, i) => ({
     id: 200 + i + 1,
     category: "Corporate",
     title: `Corporate Event ${i + 1}`,
@@ -52,15 +52,13 @@ const Gallery: React.FC = () => {
     background: `/open-mics/${i + 1}.jpg`,
   }));
 
-  const studiosImages: GalleryItem[] = [
-    {
-      id: 500,
-      category: "Studios",
-      title: "Recording Session",
-      image: "https://images.unsplash.com/photo-1473177104440-ffee2f376098",
-      background: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04",
-    },
-  ];
+  const studiosImages: GalleryItem[] = Array.from({ length: 7 }, (_, i) => ({
+    id: 500 + i + 1,
+    category: "Studios",
+    title: `Studio Session ${i + 1}`,
+    image: `/studios/${i + 1}.jpg`,
+    background: `/studios/${i + 1}.jpg`,
+  }));
 
   const allGalleryItems: GalleryItem[] = [
     ...beatsImages,
@@ -135,12 +133,8 @@ const Gallery: React.FC = () => {
   }, [isModalOpen, selectedImageIndex]);
 
   return (
-    <section
-      id="gallery"
-      className="py-20 bg-gradient-to-b from-black-muted to-background relative"
-      style={{ backgroundImage: "var(--bg-pattern)" }}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="gallery" className="py-20 bg-transparent relative min-h-screen">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold font-oswald text-foreground mb-6 tracking-wide">
             Photo Gallery
@@ -166,79 +160,75 @@ const Gallery: React.FC = () => {
         </div>
 
         {/* Gallery Grid */}
-        <div className="relative">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {paginatedItems.map((item, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {paginatedItems.map((item, index) => (
+            <div
+              key={item.id}
+              className="group relative overflow-hidden rounded-2xl cursor-pointer transition-transform duration-500 hover:scale-105"
+              onClick={() => openModal(index)}
+            >
               <div
-                key={item.id}
-                className="group relative overflow-hidden rounded-2xl cursor-pointer transition-transform duration-500 hover:scale-105"
-                onClick={() => openModal(index)}
+                className="aspect-[4/3] relative"
+                style={{
+                  backgroundImage: `url(${item.background})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
               >
-                <div
-                  className="aspect-[4/3] relative"
-                  style={{
-                    backgroundImage: `url(${item.background})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                >
-                  <div className="absolute inset-0 bg-black/30"></div>
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover relative z-10"
-                    draggable={false}
-                  />
-                </div>
+                {/* Removed background overlay so video visible */}
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover relative z-10"
+                  draggable={false}
+                />
+              </div>
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black-deep/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-white font-semibold font-inter text-lg mb-1">
-                      {item.title}
-                    </h3>
-                    <p className="text-gold text-sm font-inter">{item.category}</p>
-                  </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black-deep/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-4 left-4 right-4">
+                  <h3 className="text-white font-semibold font-inter text-lg mb-1">{item.title}</h3>
+                  <p className="text-gold text-sm font-inter">{item.category}</p>
                 </div>
               </div>
-            ))}
-          </div>
-
-          {/* Pagination Arrows */}
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => {
-              if (currentPage > 0) {
-                if (activeCategory === "All") {
-                  setShuffledAllItems(shuffleArray(allGalleryItems));
-                }
-                setCurrentPage(currentPage - 1);
-              }
-            }}
-            disabled={currentPage === 0}
-            className="absolute -bottom-16 left-1/2 transform -translate-x-16 w-12 h-12 rounded-full border-gold text-gold hover:bg-gold hover:text-black-deep disabled:opacity-50 disabled:cursor-not-allowed"
-            aria-label="Previous page"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => {
-              if (currentPage < totalPages - 1) {
-                if (activeCategory === "All") {
-                  setShuffledAllItems(shuffleArray(allGalleryItems));
-                }
-                setCurrentPage(currentPage + 1);
-              }
-            }}
-            disabled={currentPage === totalPages - 1}
-            className="absolute -bottom-16 left-1/2 transform translate-x-4 w-12 h-12 rounded-full border-gold text-gold hover:bg-gold hover:text-black-deep disabled:opacity-50 disabled:cursor-not-allowed"
-            aria-label="Next page"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </Button>
+            </div>
+          ))}
         </div>
+
+        {/* Pagination Arrows */}
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => {
+            if (currentPage > 0) {
+              if (activeCategory === "All") {
+                setShuffledAllItems(shuffleArray(allGalleryItems));
+              }
+              setCurrentPage(currentPage - 1);
+            }
+          }}
+          disabled={currentPage === 0}
+          className="absolute -bottom-16 left-1/2 transform -translate-x-16 w-12 h-12 rounded-full border-gold text-gold hover:bg-gold hover:text-black-deep disabled:opacity-50 disabled:cursor-not-allowed"
+          aria-label="Previous page"
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </Button>
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => {
+            if (currentPage < totalPages - 1) {
+              if (activeCategory === "All") {
+                setShuffledAllItems(shuffleArray(allGalleryItems));
+              }
+              setCurrentPage(currentPage + 1);
+            }
+          }}
+          disabled={currentPage === totalPages - 1}
+          className="absolute -bottom-16 left-1/2 transform translate-x-4 w-12 h-12 rounded-full border-gold text-gold hover:bg-gold hover:text-black-deep disabled:opacity-50 disabled:cursor-not-allowed"
+          aria-label="Next page"
+        >
+          <ChevronRight className="w-5 h-5" />
+        </Button>
       </div>
 
       {/* Modal */}
@@ -261,14 +251,13 @@ const Gallery: React.FC = () => {
             <ChevronLeft size={36} />
           </button>
 
-          {/* Image */}
           {filteredItems[selectedImageIndex] && (
             <img
               src={filteredItems[selectedImageIndex].image}
               alt={filteredItems[selectedImageIndex].title}
               className="max-w-[85%] max-h-[75%] rounded-xl shadow-2xl transition-transform duration-300 scale-95 animate-[zoomIn_0.3s_ease]"
               style={{ marginTop: "2rem" }}
-              onClick={(e) => e.stopPropagation()} // Prevent closing when clicking the image
+              onClick={(e) => e.stopPropagation()}
             />
           )}
 
